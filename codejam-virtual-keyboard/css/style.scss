@@ -1,0 +1,101 @@
+$maxwidth: 950px;
+$heightTextarea: 300px;
+$width: 100%;
+$keyboardWidth: 900px;
+$margin: 0 auto;
+$blue: #b3e5fc;
+$divMargin: 5px;
+$borderRadius: 2px;
+$font: Montserrat, sans-serif;
+$fontWeight: 600;
+$fontSize: 0.8em;
+@mixin grid {
+  display: grid;
+  grid-template-columns: repeat(30, 30px);
+  grid-template-rows: repeat(5, 60px);
+}
+
+body {
+  max-width: $maxwidth;
+  margin: $margin;
+}
+#textarea {
+  width: $width;
+  height: $heightTextarea;
+}
+
+.keyboard {
+  @include grid;
+  background-color: #198496;
+  margin: $margin;
+  padding: 10px;
+  width: $keyboardWidth;
+  border-radius: $borderRadius;
+
+  .tab,
+  .del,
+  .key,
+  .ctrl,
+  .win,
+  .alt {
+    grid-column: span 2;
+    align-items: center;
+  }
+  .ctrlLeft {
+    grid-column-start: 4;
+    grid-column-end: 6;
+  }
+
+  .backspace,
+  .shiftLeft {
+    grid-column: span 4;
+  }
+  .capslock {
+    grid-column: span 3;
+  }
+  .enter {
+    grid-column: span 5;
+  }
+  .shiftRight {
+    grid-column: span 6;
+  }
+  .space {
+    grid-column: span 14;
+  }
+  div {
+    background-color: $blue;
+    margin: $divMargin;
+    border-radius: $borderRadius;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $font;
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .active {
+    animation: redBtn 0.1s linear;
+    border-radius: 40%;
+  }
+  .off {
+    display: none;
+  }
+  .on {
+    display: block;
+  }
+  .caps {
+    text-transform: uppercase;
+  }
+}
+
+@keyframes redBtn {
+  from {
+    background-color: #b3e5fc;
+  }
+  to {
+    background: #1a2e53;
+  }
+}

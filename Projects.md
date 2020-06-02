@@ -1,0 +1,6 @@
++ Image API (JavaScript) - [deploy](https://practical-neumann-115081.netlify.app//)
++ virtual-keyboard (JavaScript) - [deploy](https://focused-euler-e49ff4.netlify.app/)
++ Fancy weather (JS/Webpack/API: yandex map, openweather.com, ipinfo.io, unsplash.com/adaptive up to 320px) - [deploy](https://zen-neumann-daf7d0.netlify.app/)
++ Simple-piskel-clone (JS/Jest/simplified piskelapp.com) - [deploy](https://angry-brattain-be61c3.netlify.app/)
++ youtube-client (Angular/TypeScript/API: youtube) - [deploy](https://nervous-fermat-eb03e8.netlify.app/)
++ cultural portal (Angular/TS/Work in team) - [deploy](https://cultureportalteam5.netlify.app/main)/[repository](https://github.com/PoMaKoM/Culture-Portal_Team5)

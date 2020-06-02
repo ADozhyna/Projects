@@ -1,0 +1,7 @@
+<div class="authentication">
+  <p>Your name</p>
+  <img [src]="imgPath" [width]="imgWidth" alt="authentication">
+  <ng-container *ngIf="isLogin">
+  <button (click)="logout()" >logout</button>
+</ng-container>
+</div>

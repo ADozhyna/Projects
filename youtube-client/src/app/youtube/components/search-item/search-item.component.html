@@ -1,0 +1,24 @@
+<div class="search-item" [publicationDate]='publicationDate'  appColorBorder>
+  <img [src]= "searchItem['snippet']['thumbnails']['medium']['url']" alt="preview" class="preview">
+ <div class="statistics">
+    <div>
+      <img [src]="youtubeServise.viewedIcon" alt="icon">
+      <p>{{searchItem['statistics']['viewCount']}}</p>
+    </div>
+    <div>
+      <img [src]="youtubeServise.likedIcon" alt="icon">
+      <p>{{searchItem['statistics']['likeCount']}}</p>
+    </div>
+    <div>
+      <img [src]="youtubeServise.dislikeIcon" alt="icon">
+      <p>{{searchItem['statistics']['dislikeCount']}}</p>
+    </div>
+    <div>
+      <img [src]="youtubeServise.commentIcon" alt="icon">
+      <p>{{searchItem['statistics']['commentCount']}}</p>
+    </div>
+  </div>
+  <h2>{{searchItem['snippet']['title']}}</h2>
+  <!--<button type="button" (click)="seeDetails()">more...</button>-->
+  <a [routerLink]="[id]" routerLinkActive="active">more...</a>
+</div>

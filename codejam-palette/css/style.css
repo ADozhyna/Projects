@@ -1,0 +1,183 @@
+.container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.page-header {
+  width: 100%;
+  padding: 20px 0;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.24);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.24);
+}
+
+.menu {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu-icon,
+.app-bar {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: center;
+}
+
+.logo {
+  -webkit-box-flex: 20;
+      -ms-flex-positive: 20;
+          flex-grow: 20;
+  font-family: Roboto, sans-serif;
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+.wrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+ul {
+  list-style: none;
+}
+
+.tool-container {
+  width: 20%;
+}
+
+.tools,
+.colors {
+  width: 100%;
+  margin: 100px 0 0 30px;
+  padding: 10px 0;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.24), 0px 0px 4px rgba(0, 0, 0, 0.12);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.24), 0px 0px 4px rgba(0, 0, 0, 0.12);
+}
+
+.tools div {
+  padding: 17px 0 17px 70px;
+  font-family: Roboto, sans-serif;
+  font-size: 1em;
+}
+
+.tools div:nth-child(1) {
+  background-image: url(../assets/images/Vector.svg);
+  background-position: 10% 50%;
+  background-repeat: no-repeat;
+}
+
+.tools div:nth-child(2) {
+  background-image: url(../assets/images/Vector1.svg);
+  background-position: 10% 50%;
+  background-repeat: no-repeat;
+}
+
+.tools div:nth-child(3) {
+  background-image: url(../assets/images/Vector2.svg);
+  background-position: 10% 50%;
+  background-repeat: no-repeat;
+}
+
+.tools div:nth-child(4) {
+  background-image: url(../assets/images/Vector3.svg);
+  background-position: 10% 50%;
+  background-repeat: no-repeat;
+}
+
+.tools div:hover {
+  cursor: pointer;
+}
+
+.active {
+  background-color: #d7d7d7;
+}
+
+.colors .color {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  position: relative;
+  padding: 20px 0;
+  margin-left: 30px;
+  font-family: Roboto, sans-serif;
+  font-size: 1em;
+}
+
+.colors .color p {
+  padding-left: 25px;
+}
+
+.colors .color:hover {
+  cursor: pointer;
+}
+
+input[type="color"] {
+  border: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  outline: none;
+}
+
+input[type="color"]:hover {
+  cursor: pointer;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  background-color: #d7d7d7;
+}
+
+.input {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  pointer-events: none;
+}
+
+.canvas {
+  width: 512px;
+  height: 512px;
+  border: 1px solid grey;
+}
+
+#red {
+  background-color: red;
+}
+
+#blue {
+  background-color: blue;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,32 @@
+<ng-container *ngIf="item">
+<div class="back">
+  <button (click)="backHome()"></button>
+</div>
+<img [src]= "item.snippet.thumbnails.standard.url" alt="preview" class="preview" width="460">
+<div class="description" [publicationDate]='publicationDate' appColorBorder>
+<div>
+  <h2>{{item.snippet.title}}</h2>
+  <p class="date">{{date | date: "EEEE, MMMM dd, yyyy"}}</p>
+    <p>Description:</p>
+    <p class="text">{{item.snippet.description}}</p>
+  </div>
+  <div class="statistics">
+    <div>
+      <img [src]="youtubeServise.viewedIcon" alt="icon">
+      <p>{{item.statistics.viewCount}}</p>
+    </div>
+    <div>
+      <img [src]="youtubeServise.likedIcon" alt="icon">
+      <p>{{item.statistics.likeCount}}</p>
+    </div>
+    <div>
+      <img [src]="youtubeServise.dislikeIcon" alt="icon">
+      <p>{{item.statistics.dislikeCount}}</p>
+    </div>
+    <div>
+      <img [src]="youtubeServise.commentIcon" alt="icon">
+      <p>{{item.statistics.commentCount}}</p>
+    </div>
+  </div>
+</div>
+</ng-container>

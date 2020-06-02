@@ -1,0 +1,353 @@
+@import "_owfont-regular.scss";
+@import "_reset.scss";
+
+$maxwidth: 1440px;
+$minwidth: 320px;
+$width: 100%;
+$blockwidth: 90%;
+$grey: rgba(174, 181, 185, 0.5);
+$darkgrey: rgba(76, 82, 85, 0.4);
+$inactiveColor: rgba(76, 82, 85, 0.6);
+$white: #fff;
+$radius: 5px;
+$margin: 0 auto;
+$buttonSize: 44px;
+$buttonPadding: 0 15px;
+$montserrat: Montserrat, sans-serif;
+$buttonFontSize: 0.875em;
+$buttonMargin: 10px;
+$inputWidth: 200px;
+$inputBorder: 1px solid rgba(228, 227, 227, 0.2);
+$marginControls: 40px 0 60px 0;
+$paddingScreen: 20px 0;
+
+@mixin flex() {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+%button {
+    background-color: $grey;
+    border-radius: $radius;
+    border: none;
+    margin-right: $buttonMargin;
+    width: $buttonSize;
+    height: $buttonSize;
+    font-family: $montserrat;
+    font-size: $buttonFontSize;
+    color: $white;
+    font-weight: bold;
+    text-transform: uppercase;
+} 
+
+.wrapper {
+    width: $width;
+    background-size: cover;
+    background-position: center;
+}
+.container{
+    max-width: $maxwidth;
+    min-width: $minwidth;
+    width: $width;
+    margin: $margin;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+.controls {
+    width: $blockwidth;
+    padding: $marginControls;
+    margin: $margin;
+    @include flex();
+    @media screen and (min-width: 620px) and (max-width: 800px) {
+        padding: $paddingScreen;
+    }
+    @media screen and (min-width: 320px) and (max-width: 620px) {
+        padding: $paddingScreen;
+        flex-direction: column;
+        align-items: flex-start;
+        & .options{
+            padding-bottom: 20px;
+        }
+
+    }
+}
+
+.options {
+    @include flex();
+}
+.button{
+    @extend %button;
+    position: relative; 
+    transition: all 300ms ease;
+    &:nth-child(1){
+        background-image: url('../assets/images/Vector-2.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    &:nth-child(2){
+        width: auto;
+        padding: $buttonPadding;
+    }
+    &:nth-child(3) {
+        border-radius: 5px 0 0 5px;
+        margin: 0;
+    }
+    &:nth-child(4){
+        border-radius: 0 5px 5px 0;
+        margin: 0;
+    }
+    &:hover {
+        background-color: #96ccd9;
+        cursor: pointer;
+    }
+}
+.inactive {
+    background-color: $inactiveColor;
+    color: $grey;
+}
+
+.input {
+    width: $inputWidth;
+    height: $buttonSize;
+    background-color: $darkgrey;
+    border: $inputBorder;
+    border-radius: 5px 0 0 5px;
+    box-sizing: border-box;
+    transition: all 0.3s linear;
+    color: $white;
+}
+.input:focus {
+    width: 230px;
+}
+.input::placeholder{
+    color: $white;
+    padding-left: 30px;
+    font-family: $montserrat;
+    text-align: left;
+}
+.search {
+    @include flex();
+    position: relative;
+    .button{
+        border-radius: 0 5px 5px 0;
+        background-image: url('../assets/images/search-1.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        width: $buttonSize;
+    }
+    .speech {
+        position: absolute;
+        top: 0;
+        right: 60px;
+        background-color: transparent;
+        border-radius: 50%;
+        background-image: url('../assets//images/vector.svg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        &:hover{
+          background-color: rgba(150, 204, 217, 0.5);
+          cursor: pointer;
+
+        }
+    }
+}
+
+
+#map {
+    position: relative;
+    overflow: hidden;
+    width: 375px;
+    height: 375px;
+    border-radius: 15px 15px 0 15px;
+   @media screen and (min-width: 320px) and (max-width: 950px) {
+        width: $width;
+    }
+}
+
+.content {
+    width: $blockwidth;
+    margin: $margin;
+    padding: $marginControls;
+    @include flex();
+    @media screen and (min-width: 320px) and (max-width: 950px) {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        padding: $paddingScreen;
+        & .weather {
+            flex-grow: 1;
+            width: $width;
+        }
+        & .location {
+            flex-grow: 1;
+            margin-top: 50px;
+            width: $width;
+        }
+      }
+}
+.weather {
+    position: relative;
+    flex-grow: 1.1;
+    h1{
+        font-family: $montserrat;
+        font-size: 1.875em;
+        font-weight: bold;
+        text-transform: uppercase;
+        line-height: 54px;
+        color: $white;
+    }
+    @media screen and (min-width: 320px) and (max-width: 550px) {
+        & h1 {
+        font-size: 1.5em; 
+        line-height: 150%;
+        }
+    }
+    @media screen and (min-width: 320px) and (max-width: 665px) {
+        & .description {
+            font-size: 1.125em;
+        }
+
+    }
+}
+
+.day {
+    font-family: $montserrat;
+    font-size: 1.125em;
+    line-height: 29px;
+    color: $white; 
+}
+
+.degree {
+    flex-grow: 3;
+    font-family: $montserrat;
+    font-size: 12.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 373px;
+    color: $white;
+    @media screen and (min-width: 320px) and (max-width: 665px) {
+      font-size: 10em;
+      line-height: 200%;
+    }
+}
+.temperature {
+    @include flex();
+    align-items: stretch;
+    position: relative;
+    @media screen and (min-width: 320px) and (max-width: 665px){
+        margin-top: 20px;
+        border-radius: 15px;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 0 20px 30px 20px;
+    }
+    @media screen and (min-width: 320px) and (max-width: 550px) {
+        flex-direction: column;
+        align-items: flex-start;
+       & .degree {
+         font-size: 8em;
+         line-height: 130%;
+       }
+       &.description {
+           padding-bottom: 30px;
+       }
+      }
+}
+.description {
+    flex-grow: 1;
+    position: relative;
+    font-family: $montserrat;
+    font-size: 1.375em;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 37px;
+    color: $white;
+    & img {
+        font-size: 1.375em;
+    }
+}
+.forecast {
+    @include flex();
+    p {
+        font-family: $montserrat;
+        font-size: 3.75em;
+        font-weight: bold;
+        text-transform: uppercase;
+        line-height: 98px;
+        color: $white; 
+    }
+    .day-week {
+        font-family: $montserrat;
+        font-size: 1.375em;
+        font-weight: bold;
+        text-transform: uppercase;
+        line-height: 27px;
+        color: $white; 
+    }
+    @media screen and (min-width: 320px) and (max-width: 665px) {
+        flex-direction: column;
+        padding: 30px 20px 0 20px;
+        align-items: flex-start;
+        margin-top: 20px;
+        border-radius: 15px;
+        background-color: rgba(0, 0, 0, 0.5);
+        & .forecast-block {
+            padding-bottom: 30px;
+        }
+
+    }
+}
+.deg {
+    @include flex();
+    justify-content: flex-start;
+    color: $white;
+}
+
+.location {
+    @include flex();
+    flex-direction: column;
+    align-items: flex-end;
+    flex-grow: 1;
+}
+.coordinates {
+    font-family: $montserrat;
+    font-size: 1.25em;
+    font-weight: bold;
+    line-height: 30px;
+    text-align: right;
+    margin-top: 30px;
+    color: $white;
+}
+.owf {
+  animation: pulses 3s infinite ease-in-out;
+}
+
+@keyframes pulses {
+    0% {
+        transform: scale(0.9); opacity: 0.7; 
+    }
+    50% { 
+        transform: scale(1); opacity: 1;
+     }
+    100% { 
+        transform: scale(0.9); opacity: 0.7; 
+    }
+}
+.errors {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 250px;
+    padding: 30px 0;
+    text-align: center;
+    font-family: $montserrat;
+    font-weight: bold;
+    font-size: 1em;
+    margin: $margin;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    display: none;
+}
+
+.active {
+    display: block;
+}

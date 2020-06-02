@@ -1,0 +1,8 @@
+<form>
+  <h2>Login</h2>
+  <label for="login">login</label>
+  <input type="text" [(ngModel)]="loginservice.user.name" name="login">
+  <label for="password">password</label>
+  <input type="password" [(ngModel)]="loginservice.user.password" name="password">
+  <input type="button" value="Login" (click)="submit()"/>
+</form>

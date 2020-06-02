@@ -1,0 +1,162 @@
+$maxwidth: 1440px;
+$width: 100%;
+$toolContainerWidth: 20%;
+$margin: 0 auto;
+$padding: 20px 0;
+$marginColors: 30px;
+$white: #fff;
+$shadowHeader: 0px 4px 4px rgba(0, 0, 0, 0.24);
+$gray: #d7d7d7;
+$backgroundPosition: 10% 50%;
+@mixin flex() {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+$font: Roboto, sans-serif;
+$font-size: 1.25em;
+$toolsMargin: 100px 0 0 30px;
+$doubleShadow: 0px 4px 4px rgba(0, 0, 0, 0.24), 0px 0px 4px rgba(0, 0, 0, 0.12);
+$paddingTools: 10px 0;
+$paddingToolsItem: 17px 0 17px 70px;
+$fontSizeItem: 1em;
+$canvasSize: 512px;
+$canvasBorder: 1px solid grey;
+$colorSize: 20px;
+
+.container {
+  max-width: $maxwidth;
+  width: $width;
+  margin: $margin;
+}
+.page-header {
+  width: $width;
+  padding: $padding;
+  background-color: $white;
+  box-shadow: $shadowHeader;
+}
+.menu {
+  width: $width;
+  @include flex();
+}
+.menu-icon,
+.app-bar {
+  flex-grow: 1;
+  text-align: center;
+}
+.logo {
+  flex-grow: 20;
+  font-family: $font;
+  font-size: $font-size;
+  font-weight: bold;
+}
+.wrapper {
+  width: $width;
+  @include flex();
+}
+ul {
+  list-style: none;
+}
+.tool-container {
+  width: $toolContainerWidth;
+}
+.tools,
+.colors {
+  width: $width;
+  margin: $toolsMargin;
+  padding: $paddingTools;
+  background-color: $white;
+  box-shadow: $doubleShadow;
+}
+.tools {
+  div {
+    padding: $paddingToolsItem;
+    font-family: $font;
+    font-size: $fontSizeItem;
+    // width: $width;
+    &:nth-child(1) {
+      background-image: url(../assets/images/Vector.svg);
+      background-position: $backgroundPosition;
+      background-repeat: no-repeat;
+    }
+    &:nth-child(2) {
+      background-image: url(../assets/images/Vector1.svg);
+      background-position: $backgroundPosition;
+      background-repeat: no-repeat;
+    }
+    &:nth-child(3) {
+      background-image: url(../assets/images/Vector2.svg);
+      background-position: $backgroundPosition;
+      background-repeat: no-repeat;
+    }
+    &:nth-child(4) {
+      background-image: url(../assets/images/Vector3.svg);
+      background-position: $backgroundPosition;
+      background-repeat: no-repeat;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.active {
+  background-color: $gray;
+}
+
+.colors {
+  .color {
+    @include flex();
+    justify-content: flex-start;
+    position: relative;
+    padding: $padding;
+    margin-left: $marginColors;
+    font-family: $font;
+    font-size: $fontSizeItem;
+    p {
+      padding-left: 25px;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+input[type="color"] {
+  border: none;
+  width: $colorSize;
+  height: $colorSize;
+  border-radius: 50%;
+  overflow: hidden;
+  outline: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.circle {
+  width: $colorSize;
+  height: $colorSize;
+  border-radius: 50%;
+  border: 1px solid #000;
+  background-color: $gray;
+}
+.input {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  pointer-events: none;
+}
+
+.canvas {
+  width: $canvasSize;
+  height: $canvasSize;
+  border: $canvasBorder;
+}
+#red {
+  background-color: red;
+}
+#blue {
+  background-color: blue;
+}

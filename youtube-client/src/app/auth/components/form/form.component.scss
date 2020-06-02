@@ -1,0 +1,53 @@
+:host {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 310px;
+    padding: 0px 20px 20px 20px;
+    margin-top: 50px;
+    background-color: #F2F2F2;
+    label {
+      padding: 5px;
+      font-size: 10px;
+      line-height: 12px;
+      color: #828282;
+    }
+    h2 {
+      font-size: 18px;
+      line-height: 21px;
+      font-weight: bold;
+    }
+    input {
+      width: 295px;
+      padding: 10px 5px;
+      background-color: #E0E0E0;
+      border: none;
+      font-size: 10px;
+      line-height: 12px;
+    }
+    input[type = button]{
+      align-self: flex-end;
+      width: 125px;
+      margin-top: 20px;
+      font-size: 12px;
+      line-height: 14px;
+      border: none;
+      color: #FFF;
+      border-radius: 5px;
+      background-color: #2F80ED;
+      box-shadow:  2px 2px 4px 2px rgba(47,128,237,0.8);
+      cursor: pointer;
+      &:hover {
+        background-color: darken(#2F80ED, 15%);
+      }
+    }
+  }
+}
+
+

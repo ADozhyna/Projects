@@ -1,0 +1,25 @@
+{
+  "name": "codejam-image-api",
+  "version": "1.0.0",
+  "description": "codejam task",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ./**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rolling-scopes-school/adozhyna-RS2019Q3.git"
+  },
+  "author": "Hanna Dozhyna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rolling-scopes-school/adozhyna-RS2019Q3/issues"
+  },
+  "homepage": "https://github.com/rolling-scopes-school/adozhyna-RS2019Q3#readme",
+  "devDependencies": {
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2"
+  }
+}

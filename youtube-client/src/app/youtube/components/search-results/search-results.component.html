@@ -1,0 +1,6 @@
+<app-filtering-criteria *ngIf='globalService.isClicked'></app-filtering-criteria>
+<div *ngIf="globalService.response">
+  <app-search-item class="search-item" *ngFor='let item of ( globalService.response.items | sorting: youtubeService.order | filter: youtubeService.title )' [searchItem]='item'>
+  </app-search-item>
+</div>
+

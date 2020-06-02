@@ -1,0 +1,202 @@
+/* sizes */
+$maxwidth: 1440px;
+$width: 100%;
+$canvasSize: 150px;
+
+/* margin/padding */
+$margin: 0 auto;
+$marginButton: 20px 5px;
+$paddingButton: 15px 0;
+$padding: 0 20px;
+
+/* colors */
+$white: #fff;
+$gray: #2d2d2d;
+$darkGray: #1d1d1d;
+$gray1: #333;
+$gray2: #444;
+$colorFont: #e6e6e6;
+$colorActive: #42b395;
+$colorBackground: #588BAE;
+$gold: #FFD700;
+$goldenShadow: 4px 4px 15px rgba(255, 215, 0, 0.6);
+
+/* mixins */
+@mixin flex() {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* font */
+$font: Roboto, sans-serif;
+$font-size: 1.25em;
+$fontSizeTitle: 30px;
+$lineHight: 48px;
+
+
+body {
+    background-color: $darkGray;
+}
+
+.wrapper {
+    max-width: $maxwidth;
+    width: $width;
+    margin: $margin;
+    font-family: $font;
+    color: $colorFont;
+}
+
+.header,
+footer {
+    @include flex();
+   // justify-content: flex-start;
+    padding: $padding;
+    background-color: $gray;
+}
+.header-title {
+    line-height: $lineHight;
+    font-size: $fontSizeTitle;
+    text-transform: uppercase;
+}
+.description-wrapper {
+    @include flex();
+    background-color: $colorBackground;
+    padding: 20px;
+}
+
+.preview {
+    position: absolute;
+    right: 9px;
+    top: 40px;
+    width: $canvasSize;
+    height: $canvasSize;
+}
+
+.canvas-preview {
+    width: $canvasSize;
+    height: $canvasSize;
+    image-rendering: pixelated;
+    background-color: $gray2;
+    border: 2px solid $gray;
+    border-radius: 2px;
+}
+
+.screenshot {
+    position: relative;
+    width: 950px;
+    height: 450px;
+    background-image: url('assets/images/screnshot.jpg');
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: cover;
+}
+.description-text {
+    font-size: $fontSizeTitle;
+    padding-right: 30px;
+}
+.create-sprite,
+.sign-in {
+    width: 150px;
+    display: inline-block;
+    cursor: pointer;
+    margin: $marginButton;
+	padding: $paddingButton;
+	text-align: center;
+	color: white;
+    background-color: $gold;
+    color: $darkGray;
+    font-size: $font-size;
+    font-weight: bold;
+    border-radius: 3px;
+    border: none;
+    &:hover {
+        box-shadow: $goldenShadow;
+    }
+}
+.sprite-example {
+    width: 250px;
+    height: 250px;
+    margin-right: 20px;
+    image-rendering: pixelated;
+    background-color: $gray2;
+    border: 2px solid $white;
+}
+.gallery {
+    @include flex();
+    justify-content: center;
+    margin-bottom: 50px;
+
+}
+.examples-title {
+    line-height: $lineHight;
+    text-align: center;
+    font-size: $font-size;
+    margin: $marginButton;
+}
+.function-image {
+    width: $canvasSize;
+    height: $canvasSize;
+    border: 2px solid $white;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+.function-canvas {
+    flex-shrink: 0;
+    width: $canvasSize;
+    height: $canvasSize;
+    border: 2px solid $white;
+    border-radius: 2px;
+    background-color: $gray2;
+    image-rendering: pixelated;
+}
+
+.functionality-list {
+    @include flex();
+    justify-content: space-around;
+    background-color: $colorBackground;
+    padding: 30px;
+}
+
+.function-item {
+    @include flex();
+    margin: 10px;
+}
+.function-item{
+   justify-content: flex-end;
+    text-align: right;
+}
+
+.function-description {
+    padding-right: 20px;
+}
+.right {
+    .function-item {
+        justify-content: flex-start; 
+    }
+    .function-description {
+        text-align: left;
+        padding-right: 0;
+        padding-left: 20px;
+    }
+}
+
+.function-title {
+    font-size: $font-size;
+    line-height: 2.25em;
+}
+.function-text {
+    font-size: 1em;
+    line-height: 1.25em;
+}
+.footer {
+    padding: 30px 0;
+    font-size: $font-size;
+    line-height: 1.875em;
+    background-color: $darkGray;
+    a {
+        color: $colorFont;
+    }
+}
+
+

@@ -1,0 +1,7 @@
+<div>
+  <p>Sorting by:</p>
+  <a (click)="onSortBy('Date')">date</a>
+  <a (click)="onSortBy('ViewCount')">count of views</a>
+  <p>by word or sentence</p>
+  <input [(ngModel)]='keyword' (change)='onFilterbyTitle(keyword)' type="text">
+</div>

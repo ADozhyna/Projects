@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="index.css" />
+  <title>simple-piskel-clone</title>
+</head>
+
+<body>
+  <div class="container">
+    <header class="page-header">
+      <h1 class="header-title">Piskel-clone</h1>
+      <p class='header-text'>New piskel*</p>
+    </header>
+    <div class="wrapper">
+      <div class="tool-container">
+        <ul class="pencil-sizes" data-title="Pen size from 1 to 4">
+          <li class="pen-size first active" data-size="1"></li>
+          <li class="pen-size" data-size="2"></li>
+          <li class="pen-size" data-size="3"></li>
+          <li class="pen-size" data-size="4"></li>
+        </ul>
+        <ul class="tools">
+          <li class="tool tool-bucket" id="paintb" data-title="Paint bucket tool (B)"></li>
+          <li class="tool tool-picker" id="choose" data-title="Color picker (H)"></li>
+          <li class="tool tool-pencil active" id="pencil" data-title="Pen tool (P)"></li>
+          <li class="tool tool-eraser" id="eraser" data-title="Eraser tool (E)"></li>
+          <li class="tool tool-line" id="stroke" data-title="Stroke tool (S)"></li>
+          <li class="tool tool-clear" id="clear" data-title="Clear canvas (C)"></li>
+        </ul>
+        <div class="colors">
+          <input type="color" class="primary-color" id="current" value="#000000" />
+          <div class="rectangle primary"></div>
+          <input type="color" class="second-color" id="secondary" value="#ffffff" />
+          <div class="rectangle secondary"></div>
+          <button class="swap-colors"></button>
+        </div>
+        <button class="show-modal" data-title="Keyboard shortcuts"></button>
+      </div>
+      <div class="frames-list">
+        <ul class="frames">
+          <li class="frame active-frame">
+            <span class="frame-number">1</span>
+            <canvas class="frame-canvas" width="100" height="100" draggable="true"></canvas>
+            <button class="copy-frame"></button>
+            <button class="delete-frame"></button>
+          </li>
+        </ul>
+        <div class="add-frame">
+          <div class="add-frame-icon"></div>
+          <div class="label">Add new frame</div>
+        </div>
+      </div>
+      <div class="canvas-wrapper">
+        <canvas id="canvas" class="canvas" width="512" height="512"></canvas>
+      </div>
+      <div class="options">
+        <div class="animate-wrapper">
+          <canvas id="preview" class="animate-canvas" width="230" height="230">Your browser doesn't support
+            canvas</canvas>
+          <button class="animate-fullscreen"></button>
+          <div class="fps-wrapper">
+            <p class="fps-value">
+              <span id="fps-value"></span>
+              <span>FPS</span>
+            </p>
+            <input class="fps-input" type="range" id="fps" name="fps-input" min="0" max="24" step="1">
+          </div>
+          <div class="change-size-button">
+            <p class="btns-title">Resize canvas</p>
+            <button class="button" id="size-big">128x128</button>
+            <button class="button" id="size-medium">64x64</button>
+            <button class="button" id="size-small">32x32</button>
+          </div>
+        </div>
+        <div class="data-storage">
+          <p class="btns-title">Save as</p>
+          <div class="btns-container">
+            <button class="button save-apng">.apng</button>
+            <button class="button save-gif">.gif</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="keys-container">
+      <div id="keys-wrapper" class="keys-wrapper">
+        <p class="keys-title">Enter keyboard shortcuts</p>
+        <div>
+          <input id="paintbucket" type="text">
+          <label for="paintbucket">Paintbucket</label>
+        </div>
+        <div>
+          <input id="pen-key" type="text" na>
+          <label for="pen-key">Pencil</label>
+        </div>
+        <div>
+          <input id="colorpicker" type="text">
+          <label for="colorpicker">Color-picker</label>
+        </div>
+        <div>
+          <input id="eraser-key" type="text">
+          <label for="eraser-key">Eraser</label>
+        </div>
+        <div>
+          <input id="stroke-key" type="text">
+          <label for="stroke-key">Stroke</label>
+        </div>
+        <div>
+          <input id="clear-key" type="text">
+          <label for="clear-key">Clear</label>
+        </div>
+        <div>
+          <button id="ok" class="change-shortcut button">Ok</button>
+          <button id="cancel" class="button">Cancel</button>
+        </div>
+      </div>
+    </div>
+    </main>
+    <script src="index.js"></script>
+</body>
+
+</html>

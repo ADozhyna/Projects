@@ -1,0 +1,12 @@
+<header>
+  <div class="wrapper">
+    <div class="search">
+      <app-logo></app-logo>
+      <div class="search-component">
+        <input type="text" [formControl]="findControl">
+      </div>
+      <button class="setting" (click)="onShowingPanel()"></button>
+    </div>
+    <app-authentication></app-authentication>
+  </div>
+</header>

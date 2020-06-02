@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>palette</title>
+</head>
+
+<body>
+  <main class="container">
+    <header class="page-header">
+      <nav class="menu">
+        <div class="menu-icon">
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 12H18V10H0V12ZM0 7H18V5H0V7ZM0 0V2H18V0H0Z" fill="black"
+              fill-opacity="0.54" />
+          </svg>
+        </div>
+        <div class="logo">
+          <h1>Codejam Palette</h1>
+        </div>
+        <div class="app-bar">
+          <svg width="4" height="16" viewBox="0 0 4 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M2 4C3.1 4 4 3.1 4 2C4 0.9 3.1 0 2 0C0.9 0 0 0.9 0 2C0 3.1 0.9 4 2 4ZM2 6C0.9 6 0 6.9 0 8C0 9.1 0.9 10 2 10C3.1 10 4 9.1 4 8C4 6.9 3.1 6 2 6ZM2 12C0.9 12 0 12.9 0 14C0 15.1 0.9 16 2 16C3.1 16 4 15.1 4 14C4 12.9 3.1 12 2 12Z"
+              fill="black" fill-opacity="0.54" />
+          </svg>
+        </div>
+      </nav>
+    </header>
+    <div class="wrapper">
+      <div class="tool-container">
+        <div class="tools">
+          <div class="tool" id="paintb">Paint bucket</div>
+          <div class="tool" id="choose">Choose color</div>
+          <div class="tool active" id="pencil">Pencil</div>
+          <div class="tool" id="transform">Transform</div>
+        </div>
+        <div class="colors">
+          <div class="color" id="color-current">
+            <div class="circle input" id="cur"></div>
+            <input type="color" id="current" />
+            <p class="paragraph">Current color</p>
+          </div>
+          <div class="color" id="color-prev">
+            <div class="circle" id="prev"></div>
+            <p>Prev color</p>
+          </div>
+          <div class="color" id="color-red">
+            <div class="circle" id="red"></div>
+            <p>red</p>
+          </div>
+          <div class="color" id="color-blue">
+            <div class="circle" id="blue"></div>
+            <p>blue</p>
+          </div>
+        </div>
+      </div>
+      <canvas id="canvas" class="canvas" width="512" height="512"></canvas>
+    </div>
+  </main>
+  <script src="index.js"></script>
+</body>
+
+</html>
